@@ -1,7 +1,7 @@
 {
   "name": "acm-dl-extension",
   "version": "1.0.0",
-  "description": "Extensions to automate downloading from the ACM",
+  "description": "Extension to automate downloading from the ACM",
   "scripts": {
     "build": "npm run clean && tsc && npm run copy-files",
     "copy-files": "cp manifest.json dist/ && cp popup.html dist/ && cp styles.css dist/ && cp -r icons dist/",

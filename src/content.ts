@@ -64,7 +64,6 @@ class StatusDialog {
 
 class ACMDownloadAutomation {
   private statusDialog: StatusDialog;
-  private retryCount: number = 0;
 
   constructor() {
     this.statusDialog = new StatusDialog();
@@ -128,7 +127,7 @@ class ACMDownloadAutomation {
       } catch (error) {
         if (attempt < CONFIG.maxRetries) {
           this.statusDialog.updateStatus(
-            `Step 1/3: Retry ${attempt}/${CONFIG.maxRetries - 1}...`,
+            `Step 1/3: Retry ${attempt}/${CONFIG.maxRetries}...`,
             'warning'
           );
           await this.delay(CONFIG.retryDelay);
@@ -158,7 +157,7 @@ class ACMDownloadAutomation {
       } catch (error) {
         if (attempt < CONFIG.maxRetries) {
           this.statusDialog.updateStatus(
-            `Step 2/3: Retry ${attempt}/${CONFIG.maxRetries - 1}...`,
+            `Step 2/3: Retry ${attempt}/${CONFIG.maxRetries}...`,
             'warning'
           );
           await this.delay(CONFIG.retryDelay);
@@ -188,7 +187,7 @@ class ACMDownloadAutomation {
       } catch (error) {
         if (attempt < CONFIG.maxRetries) {
           this.statusDialog.updateStatus(
-            `Step 3/3: Retry ${attempt}/${CONFIG.maxRetries - 1}...`,
+            `Step 3/3: Retry ${attempt}/${CONFIG.maxRetries}...`,
             'warning'
           );
           await this.delay(CONFIG.retryDelay);
