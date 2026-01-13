@@ -2,16 +2,6 @@
 
 A Chromium extension written in TypeScript that automates the download process from the ACM Digital Library.
 
-## Features
-
-The extension automatically performs the following tasks when visiting ACM Digital Library pages:
-
-1. **Check Checkboxes**: Finds and checks all checkbox elements with the class `checkbox-select`
-2. **Click Download Link**: Locates and clicks an anchor element with the title "Download"
-3. **Click Download Button**: Finds and clicks the first button with the class `download-button`
-
-Each step displays a status dialog showing the current progress. If any step fails, the extension will automatically retry after a short delay (2 seconds, up to 3 attempts).
-
 ## Installation
 
 ### Building from Source
@@ -33,13 +23,6 @@ Each step displays a status dialog showing the current progress. If any step fai
    - Select the `dist` folder from this project
 
 ## Usage
-
-Once installed, the extension will automatically run on ACM Digital Library pages (`https://dl.acm.org/*`). 
-
-A status dialog will appear in the top-right corner of the page showing:
-- Current step being executed
-- Success/error messages
-- Retry attempts if needed
 
 ## Configuration
 

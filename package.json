@@ -6,13 +6,18 @@
     "build": "npm run clean && tsc && npm run copy-files",
     "copy-files": "cp manifest.json dist/ && cp popup.html dist/ && cp styles.css dist/ && cp -r icons dist/",
     "watch": "tsc --watch",
-    "clean": "rm -rf dist"
+    "clean": "rimraf dist"
   },
-  "keywords": ["chrome-extension", "acm", "automation"],
+  "keywords": [
+    "chrome-extension",
+    "acm",
+    "automation"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@types/chrome": "^0.0.260",
+    "rimraf": "^6.1.2",
     "typescript": "^5.3.3"
   }
 }

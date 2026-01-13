@@ -40,15 +40,6 @@ The extension performs three sequential automation tasks:
    - Finds button with class `download-button`
    - Simulates a click
 
-## Key Features
-
-✅ **Status Dialog**: Visual feedback showing progress in real-time
-✅ **Retry Mechanism**: 3 automatic retry attempts with 2-second delays
-✅ **Error Handling**: User-friendly error messages
-✅ **TypeScript**: Type-safe code with modern ES2020 features
-✅ **Manifest V3**: Latest Chrome extension standard
-✅ **Configurable**: Easy-to-modify selectors and settings
-
 ## Build Instructions
 
 ```bash
@@ -58,31 +49,3 @@ npm run build
 
 The built extension will be in the `dist/` folder.
 
-## Testing
-
-1. Load the `dist` folder as an unpacked extension in Chrome
-2. Visit `https://dl.acm.org/*` to see it in action
-3. Or open `test-page.html` locally to test individual components
-
-## Code Quality
-
-- ✅ TypeScript compilation successful (no errors)
-- ✅ Code review passed (all issues fixed)
-- ✅ CodeQL security scan passed (0 vulnerabilities)
-- ✅ Clean git history with descriptive commits
-
-## Security Summary
-
-**Security Scan Results**: ✅ PASSED
-- No security vulnerabilities detected by CodeQL
-- No external dependencies with known issues
-- Client-side only operation (no network requests)
-- Limited permissions (only ACM DL pages)
-
-## Future Enhancements
-
-Possible future improvements:
-- Add configuration UI for custom selectors
-- Support for multiple download sources
-- Export/import settings functionality
-- Batch download progress tracking

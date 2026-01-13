@@ -107,33 +107,5 @@ Show success (3s)
 Remove dialog
 ```
 
-## Browser Compatibility
 
-The extension is compatible with:
-- ✓ Google Chrome (v88+)
-- ✓ Microsoft Edge (v88+)
-- ✓ Brave Browser
-- ✓ Opera (v74+)
-- ✓ Any Chromium-based browser supporting Manifest V3
 
-## Security & Privacy
-
-- **No External Requests**: Extension operates entirely client-side
-- **Limited Permissions**: Only accesses ACM Digital Library pages
-- **No Data Collection**: No user data is collected or transmitted
-- **Open Source**: Full source code available for audit
-
-## Development Workflow
-
-1. **Edit Source**: Modify `src/content.ts`
-2. **Compile**: Run `npm run build` or `npm run watch`
-3. **Reload**: Refresh extension in `chrome://extensions/`
-4. **Test**: Navigate to ACM DL page or use test-page.html
-
-## Error Handling
-
-The extension includes comprehensive error handling:
-- Element not found errors with descriptive messages
-- Automatic retry with exponential backoff
-- User-friendly error messages in status dialog
-- Graceful failure without breaking page functionality
