@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACM DL Extension Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #007acc;
+        }
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .checkbox-select {
+            margin: 10px 0;
+        }
+        label {
+            margin-left: 10px;
+        }
+        button, a {
+            display: inline-block;
+            margin: 10px 10px 10px 0;
+            padding: 10px 20px;
+            background: #007acc;
+            color: white;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover, a:hover {
+            background: #005a9c;
+        }
+        .log {
+            margin-top: 20px;
+            padding: 10px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .log-entry {
+            margin: 5px 0;
+            padding: 5px;
+            border-left: 3px solid #007acc;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ACM Download Extension - Test Page</h1>
+    <p><strong>Note:</strong> This is a test page to verify the extension functionality. 
+    The extension is designed to work on <code>https://dl.acm.org/*</code> pages.</p>
+
+    <div class="section">
+        <h2>Step 1: Checkboxes</h2>
+        <p>The extension will check all checkboxes with class <code>checkbox-select</code>:</p>
+        <div>
+            <input type="checkbox" class="checkbox-select" id="cb1">
+            <label for="cb1">Document 1</label>
+        </div>
+        <div>
+            <input type="checkbox" class="checkbox-select" id="cb2">
+            <label for="cb2">Document 2</label>
+        </div>
+        <div>
+            <input type="checkbox" class="checkbox-select" id="cb3">
+            <label for="cb3">Document 3</label>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Step 2: Download Link</h2>
+        <p>The extension will click the link with title <code>Download</code>:</p>
+        <a href="#" title="Download" onclick="logAction('Download link clicked'); return false;">Download Selected</a>
+    </div>
+
+    <div class="section">
+        <h2>Step 3: Download Button</h2>
+        <p>The extension will click the button with class <code>download-button</code>:</p>
+        <button class="download-button" onclick="logAction('Download button clicked')">Confirm Download</button>
+    </div>
+
+    <div class="section">
+        <h2>Activity Log</h2>
+        <div id="log" class="log">
+            <div class="log-entry">Ready. Waiting for extension to run...</div>
+        </div>
+    </div>
+
+    <script>
+        function logAction(message) {
+            const log = document.getElementById('log');
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            log.appendChild(entry);
+            log.scrollTop = log.scrollHeight;
+        }
+
+        // Monitor checkbox changes
+        document.querySelectorAll('.checkbox-select').forEach(cb => {
+            cb.addEventListener('change', (e) => {
+                logAction(`Checkbox "${e.target.nextElementSibling.textContent}" ${e.target.checked ? 'checked' : 'unchecked'}`);
+            });
+        });
+
+        // Log when page is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            logAction('Page loaded and ready');
+        });
+    </script>
+</body>
+</html>
